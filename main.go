@@ -13,7 +13,11 @@ func main() {
 	fmt.Print("What URL do you want check? : ")
 	fmt.Scanln(&url)
 	err := hitURL(url)
-	fmt.Println(err)
+	if err == nil {
+		fmt.Println("This URL available.")
+	} else {
+		fmt.Println("This URL unavailable.")
+	}
 }
 
 func hitURL(url string) error {
